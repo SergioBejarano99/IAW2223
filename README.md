@@ -1,4 +1,4 @@
-Este es el Repositorio de Sergio Bejarano Arroyo (2º CFGS) para el Módulo de **Implantación de Aplicaciones Web**, en el que utilizaremos algunas de las siguientes Tecnologías:
+Este es el Repositorio de SergioBejarano99 (2º CFGS) para el Módulo de **Implantación de Aplicaciones Web**, en el que utilizaremos algunas de las siguientes Tecnologías:
     - HTML
     - CSS
     - JavaScript
