@@ -1,0 +1,71 @@
+
+body {
+    background-image: url("matrix.jpg");
+    margin-top: 40px;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: Impact;
+    font-size: 2em;
+    text-align: center;
+    color: #ebe8bd;
+}
+
+p {
+    font-family: monospace;
+    font-size: 14px;
+    text-align: justify;
+    text-indent: 20px;
+    color: white;
+    margin-left: 35px;
+}
+
+img {
+    width: 180px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    margin-left: 35px;
+    margin-right: 35px;
+}
+
+div {
+    width: 70%;
+    background-color: black;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    box-shadow: 10px 10px 10px grey;
+    display: flex;
+}
+
+div:nth-child(1) {
+    height: 320px;
+}
+
+div:nth-child(2) {
+    margin-top: 50px;
+    height: 400px;
+}
+
+p::first-letter {
+    font-size: 34px;
+    font-weight: bold;
+    color: #0a9b3a;
+}
+
+h2 {
+    color: #0a9b3a;
+    font-family: Arial;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+}
