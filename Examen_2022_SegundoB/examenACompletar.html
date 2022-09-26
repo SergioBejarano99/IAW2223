@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Examen a completar</title>
+</head>
+
+<body>
+  <p id="parrafo">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean metus ipsum, ultricies vel facilisis
+    ac, condimentum at ligula. Nunc hendrerit scelerisque finibus. Duis fermentum metus libero, id scelerisque mi
+    convallis id. Suspendisse varius, leo vel blandit finibus, enim leo condimentum diam, varius tincidunt urna dui a
+    erat. Cras ut volutpat neque. In id efficitur leo. Suspendisse a ipsum tempor, rutrum eros vestibulum, porta sapien.
+    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc gravida quam
+    vulputate odio elementum, vel pretium tortor elementum. Fusce vel ante eu urna placerat tincidunt. In hac habitasse
+    platea dictumst. Sed a tortor urna. Etiam purus libero, suscipit nec diam vitae, dictum rhoncus justo. Nunc nec
+    scelerisque justo. Aenean molestie laoreet massa, at gravida ex. Sed congue eleifend magna vel placerat.</p>
+  <table>
+    <tr>
+      <td><button onclick="aumenta()" type="button" name="button">+</button> </td>
+      <!-- Aumentamos un 25% el tamaño de la fuente -->
+      <td><button onclick="disminuye()" type="button" name="button">-</button></td>
+      <!-- Disminuimos un 25% el tamaño de la fuente -->
+      <td> <select id="input-font" class="input" onchange="cambiarFuente(this);">
+          <option value="Times New Roman" selected="selected">Times New Roman</option>
+          <option value="Arial">Arial</option>
+          <option value="Verdana">Verdana</option>
+          <option value="Helvetica">Helvetica</option>
+          <option value="Monospace">Monospace</option>
+        </select> </td>
+      <td><input id="color" type="color" onchange="cambiarColor(this)"></td>
+    </tr>
+  </table>
+  <script type="text/javascript">
+    let tamano = 100; // TamaNo inicial
+    function aumenta() {
+      tamano += 25;
+      document.getElementById("parrafo").style.fontSize = tamano + "%"; // aumentamos un 25% el tamaño
+    }
+
+    function disminuye() {
+      tamano -= 25;
+      document.getElementById("parrafo").style.fontSize = tamano + "%"; //decrementamos un 25% el tamaño
+    }
+
+    function cambiarColor() {
+      document.getElementById("parrafo").style.color = document.getElementById("color")
+      .value; //Cambiamos el color del parrafo
+    }
+
+    function cambiarFuente(font) {
+      document.getElementById("parrafo").style.fontFamily = font.value; // Cambiamos la fuente del parrafo
+    }
+  </script>
+</body>
+
+</html>
