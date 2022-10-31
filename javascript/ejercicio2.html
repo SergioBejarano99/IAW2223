@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio 2</title>
 
-    <script src="js/ejercicio2"></script>
+    <meta autor="Sergio Bejarano Arroyo" />
+    <link rel="stylesheet" href="css/ejercicio2.css">
+    <script src="js/ejercicioMonedas.js"></script>
 </head>
+
 <body>
-    
+    <div>
+        <h1>CAMBIO DE MONEDA</h1>
+        <input type="number" min="1" id="cantidadIngresada">
+    </div>
+    <div>
+        <button type="button" name="conversion" onclick="cambioEuro()">EURO</button>
+        <button type="button" name="conversion" onclick="cambioDolar()">DOLAR</button>
+    </div>
+    <div>
+        <p type="text" id="resultado"></p>
+    </div>
 </body>
+
 </html>
