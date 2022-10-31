@@ -20,7 +20,6 @@ body {
     -moz-border-radius: 100%;
     -ms-border-radius: 100%;
     -o-border-radius: 100%;
-    margin-top: 10px;
 }
 
 #circuloVerde {
@@ -32,7 +31,6 @@ body {
     -moz-border-radius: 100%;
     -ms-border-radius: 100%;
     -o-border-radius: 100%;
-    margin-top: 10px;
 }
 
 #circuloAzul {
@@ -44,5 +42,8 @@ body {
     -moz-border-radius: 100%;
     -ms-border-radius: 100%;
     -o-border-radius: 100%;
-    margin-top: 10px;
+}
+
+button {
+    margin: 10px;
 }
