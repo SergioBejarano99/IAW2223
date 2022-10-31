@@ -1,8 +1,8 @@
-function ocultar(id){
-    document.getElementById(id).style.display='none';
+function ocultar(id) {
+    document.getElementById(id).style.display = 'none';
 }
 
 
 
 
-                    /* © Sergio Bejarano Arroyo */
+/* © Sergio Bejarano Arroyo */

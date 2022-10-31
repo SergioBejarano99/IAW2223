@@ -21,4 +21,4 @@ function cambioDolar() {
 
 
 
-                    /* © Sergio Bejarano Arroyo */
+/* © Sergio Bejarano Arroyo */
