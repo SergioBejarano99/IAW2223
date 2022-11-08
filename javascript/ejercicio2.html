@@ -13,17 +13,10 @@
 </head>
 
 <body>
-    <div>
-        <h1>CAMBIO DE MONEDA</h1>
-        <input type="number" min="1" id="cantidadIngresada">
-    </div>
-    <div>
-        <button type="button" name="conversion" onclick="cambioEuro()">EURO</button>
-        <button type="button" name="conversion" onclick="cambioDolar()">DOLAR</button>
-    </div>
-    <div>
-        <p type="text" id="resultado"></p>
-    </div>
+    Introduce aquí moneda:<input type="text" id="dinero">
+    <button onclick="EuroDolar()">Convertir a dolares</button>
+    <button onclick="DolarEuros()">Convertir a euros</button>
+    <p>El resultado es: <span id="resultado"></span></p>
 </body>
 
 </html>

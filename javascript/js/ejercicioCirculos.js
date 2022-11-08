@@ -1,15 +1,12 @@
-function ocultar(id) {
-    document.getElementById(id).style.display = 'none';
-}
-/*
-function cambiarEstado(circulo) {
-	if (document.getElementById(circulo).style.visibility="hidden") {
-		(document.getElementById(circulo).style.visibility="vidible")
+function cambiarEstado(id) {
+	if (document.getElementById(id).style.display == "none") {
+		document.getElementById(id).style.display = "block";
 	} else {
-		document.getElementById(circulo).style.visibility="hidden"
+		document.getElementById(id).style.display = "none";
 	}
 }
-*/
+
+
 
 
 
