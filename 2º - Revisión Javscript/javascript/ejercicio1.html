@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+
+    <link rel="stylesheet" href="css/ejercicio1.css">
+    <script src="js/ejercicio1.js"></script>
+</head>
+
+<body>
+    <h1>CALCULAR ÍNDICE DE MASA CORPORAL</h1>
+    <div class="datosUsuario">
+        <p>Introuduce tu Altura en Centímetros:</p>
+        <input type="number" min="0" id="altura">
+        <p>Introduce tu Peso en Kilogramos:</p>
+        <input type="number" min="0" id="peso">
+    </div>
+    <div class="calcularImc">
+        <button type="button" name="imc" onclick="calcularImc()">Calcular IMC</button>
+    </div>
+    <div class="resultado">
+        <p type="text" id="resultado"></p>
+    </div>
+</body>
+
+</html>
