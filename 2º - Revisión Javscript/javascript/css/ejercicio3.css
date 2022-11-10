@@ -1,0 +1,27 @@
+h1 {
+    text-align: center;
+}
+
+.formulario {
+    text-align: center;
+    background-color: antiquewhite;
+    margin-left: 30%;
+    margin-right: 30%;
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+
+input {
+    margin-left: 25px;
+}
+
+form {
+    text-align: left;
+    margin-left: 10%;
+}
+
+
+
+
+
+/* © Sergio Bejarano Arroyo */
