@@ -18,7 +18,7 @@
         <form>
             <p class="labels">
                 <label>Nombre:</label>
-                <input type="text" id="nombre" size="30%" required />
+                <input type="text" id="nombre" size="30%" />
             </p>
             <p>
                 <label>Apellido:</label>
@@ -106,7 +106,7 @@
                 <label>Repetir PIN:</label>
                 <input type="text" id="repetirPin" size="30px" minlength="8" maxlength="8" pattern="[0-9]" required />
             </p>
-            <input type="submit" value="Crear Usuario" onclick="crearUsuario()" />
+            <input type="submit" value="Crear Usuario" id="enviarFormulario" onclick="crearUsuario()" />
         </form>
 
     </div>
