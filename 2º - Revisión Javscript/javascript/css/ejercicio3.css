@@ -20,6 +20,11 @@ form {
     margin-left: 10%;
 }
 
+.camposObligatorios {
+    color: red;
+    font-size: 10px;
+}
+
 
 
 

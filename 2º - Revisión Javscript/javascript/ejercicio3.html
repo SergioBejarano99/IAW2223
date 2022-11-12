@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -18,15 +18,18 @@
         <form>
             <p class="labels">
                 <label>Nombre:</label>
-                <input type="text" id="nombre" size="30%" />
+                <input type="text" id="nombre" size="30%" required />
+                <p id="faltaNombre" class="camposObligatorios"></p>
             </p>
             <p>
                 <label>Apellido:</label>
                 <input type="text" id="apellido" size="30px" required />
+                <p id="faltaApellido" class="camposObligatorios"></p>
             </p>
             <p>
                 <label>Correo Electrónico:</label>
                 <input type="email" id="email" size="30px" required />
+                <p id="faltaEmail" class="camposObligatorios"></p>
             </p>
             <p>
                 <label>Dirección:</label>
@@ -97,18 +100,22 @@
             <p>
                 <label>DNI:</label>
                 <input type="text" id="dni" size="30px" required />
+                <p id="faltaDni" class="camposObligatorios"></p>
             </p>
             <p>
                 <label>PIN:</label>
-                <input type="text" id="pin" size="30px" minlength="8" maxlength="8" pattern="[0-9]" required />
+                <input type="text" id="pin" size="30px" required />
+                <!-- minlength="8" maxlength="8" pattern="[0-9]"  -->
+                <p id="faltaPin" class="camposObligatorios"></p>
             </p>
             <p>
                 <label>Repetir PIN:</label>
-                <input type="text" id="repetirPin" size="30px" minlength="8" maxlength="8" pattern="[0-9]" required />
+                <input type="text" id="repetirPin" size="30px" required />
+                <!-- minlength="8" maxlength="8" pattern="[0-9]" -->
+                <p id="faltaRepetirPin" class="camposObligatorios"></p>
             </p>
             <input type="submit" value="Crear Usuario" id="enviarFormulario" onclick="crearUsuario()" />
         </form>
-
     </div>
 </body>
 
