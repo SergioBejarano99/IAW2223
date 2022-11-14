@@ -13,6 +13,11 @@ h1 {
 
 input {
     margin-left: 25px;
+    width: 250px;
+}
+
+#ciudades {
+    margin-left: 25px;
 }
 
 form {
