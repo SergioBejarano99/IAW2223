@@ -42,7 +42,7 @@ function crearUsuario() {
         correcto = false;
     }
     if (correcto == true) {
-        alert(nombreFormulario.substring(0, 2) + apellidoFormulario.substring(0, 2) + telefonoFormulario.substring(10, 6));
+        alert(nombreFormulario.substring(0, 2) + apellidoFormulario.substring(0, 2) + telefonoFormulario.substring(telefonoFormulario.legnth - 3, telefonoFormulario.legnth - 1));
     }
 }
 
