@@ -1,0 +1,30 @@
+#numeroAcertado {
+    color: green;
+    font-weight: bold;
+    font-size: 50px;
+    text-align: center;
+}
+
+#numeroFallido {
+    color: red;
+    font-weight: bold;
+    font-size: 50px;
+    text-align: center;
+}
+
+#resultado {
+    font-style: oblique;
+    font-weight: bolder;
+}
+
+label,
+input {
+    font-size: 25px;
+    margin: 15px;
+}
+
+
+
+
+
+/* © Sergio Bejarano Arroyo */

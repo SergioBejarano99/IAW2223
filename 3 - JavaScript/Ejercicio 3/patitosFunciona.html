@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>¡Comprueba tus reflejos!</title>
+        <style type="text/css">
+            #patito
+            {
+                width: 200px;
+                height: 200px;
+                display: block;
+                position:relative;
+                background-image: url('patito.png');
+                background-size:100%;
+                
+            }
+            .bold
+            {
+                font-weight: bold;
+            }
+            #campoJuego {
+                margin:0 auto;
+                width:100%;
+                height:100%;
+                cursor: url('cursor.png'),auto;
+                background-image: url('fondo.jpg');
+                position:absolute;
+            }
+            #mensaje {
+                font-weight: bold;
+                color: red;
+                font-size: 400%;
+                position:absolute;
+                text-align: center;
+                padding-left:40%;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="campoJuego">
+        <h1>¡Comprueba tus reflejos!</h1>
+        <h2>¡Haz click en el patito para sumar puntos!</h2>
+        <h2>..pero cuidado, ¡los clics en el agua restan puntos!</h2>
+        <h3 class="bold">Puntos: <span id="puntos"></span></h3>
+        <p id="mensaje"></p><div id="patito"></div>
+        </div>
+        <script type="text/javascript">
+            var _0xc6c3=["\x72\x61\x6E\x64\x6F\x6D","\x77\x69\x64\x74\x68","\x73\x74\x79\x6C\x65","\x70\x61\x74\x69\x74\x6F","\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64","\x70\x78","\x68\x65\x69\x67\x68\x74","\x74\x6F\x70","\x6C\x65\x66\x74","\x64\x69\x73\x70\x6C\x61\x79","\x62\x6C\x6F\x63\x6B","\x69\x6E\x6E\x65\x72\x48\x54\x4D\x4C","\x6D\x65\x6E\x73\x61\x6A\x65","","\x6F\x6E\x63\x6C\x69\x63\x6B","\x63\x61\x6D\x70\x6F\x4A\x75\x65\x67\x6F","\x74\x61\x72\x67\x65\x74","\xA1\x46\x61\x6C\x6C\x61\x73\x74\x65\x21","\xA1\x41\x63\x69\x65\x72\x74\x6F\x21","\x6E\x6F\x6E\x65","\x70\x75\x6E\x74\x6F\x73"];var puntos=0;function aparecerpatito(){var _0xfdf4x3=Math[_0xc6c3[0]]()* 400;var _0xfdf4x4=Math[_0xc6c3[0]]()* 300;var _0xfdf4x5=(Math[_0xc6c3[0]]()* 100)+ 100;document[_0xc6c3[4]](_0xc6c3[3])[_0xc6c3[2]][_0xc6c3[1]]= _0xfdf4x5+ _0xc6c3[5];document[_0xc6c3[4]](_0xc6c3[3])[_0xc6c3[2]][_0xc6c3[6]]= _0xfdf4x5+ _0xc6c3[5];document[_0xc6c3[4]](_0xc6c3[3])[_0xc6c3[2]][_0xc6c3[7]]= _0xfdf4x3+ _0xc6c3[5];document[_0xc6c3[4]](_0xc6c3[3])[_0xc6c3[2]][_0xc6c3[8]]= _0xfdf4x4+ _0xc6c3[5];document[_0xc6c3[4]](_0xc6c3[3])[_0xc6c3[2]][_0xc6c3[9]]= _0xc6c3[10]}function desapareceMensaje(){document[_0xc6c3[4]](_0xc6c3[12])[_0xc6c3[11]]= _0xc6c3[13]}function aparecerpatitoDespuesRetraso(){setTimeout(aparecerpatito,Math[_0xc6c3[0]]()* 2000)}function desapareceMensajeDespuesRetraso(){setTimeout(desapareceMensaje,2000)}aparecerpatitoDespuesRetraso();document[_0xc6c3[4]](_0xc6c3[15])[_0xc6c3[14]]= function(_0xfdf4x9){if(_0xfdf4x9[_0xc6c3[16]]!= document[_0xc6c3[4]](_0xc6c3[3])){puntos= puntos- 1;document[_0xc6c3[4]](_0xc6c3[12])[_0xc6c3[11]]= _0xc6c3[17]}else {puntos= puntos+ 1;document[_0xc6c3[4]](_0xc6c3[12])[_0xc6c3[11]]= _0xc6c3[18]};document[_0xc6c3[4]](_0xc6c3[3])[_0xc6c3[2]][_0xc6c3[9]]= _0xc6c3[19];document[_0xc6c3[4]](_0xc6c3[20])[_0xc6c3[11]]= puntos;aparecerpatitoDespuesRetraso();desapareceMensajeDespuesRetraso()}
+        </script>
+    </body>
+</html>

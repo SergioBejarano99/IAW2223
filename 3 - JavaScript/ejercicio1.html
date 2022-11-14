@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+
+    <link rel="stylesheet" href="css/ejercicio1.css">
+    <script src="js/ejercicio1.js"></script>
+
+    <meta autor="Sergio Bejarano Arroyo" />
+</head>
+
+<body>
+    <h1>ADIVINA EL NÚMERO:</h1>
+    <label>Introduce un Número del 0 al 5:</label>
+    <input type="number" id="numeroUsuario" min="0" max="5" pattern="[0-5]{1}">
+    <input type="button" value="Comprobar Número" onclick="comprobarAleatorio()">
+    <p id="numeroAcertado"></p>
+    <p id="numeroFallido"></p>
+    <p id="resultado"></p>
+</body>
+
+</html>
