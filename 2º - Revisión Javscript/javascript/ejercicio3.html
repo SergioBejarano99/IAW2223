@@ -74,7 +74,7 @@
                     <option value="Málaga">Málaga</option>
                     <option value="Melilla">Melilla</option>
                     <option value="Murcia">Murcia</option>
-                    <option value="Navarra">Navarra</option>
+                    <option value="Naletra">Naletra</option>
                     <option value="Orense/Ourense">Orense/Ourense</option>
                     <option value="Palencia">Palencia</option>
                     <option value="Pontevedra">Pontevedra</option>
@@ -104,14 +104,12 @@
             </p>
             <p>
                 <label>PIN:</label>
-                <input type="text" id="pin" size="30px" required />
-                <!-- minlength="8" maxlength="8" pattern="[0-9]"  -->
+                <input type="text" id="pin" pattern="[0-9]{8}" style="width:30px" size="30" maxlength="8" minlength="8" required />
                 <p id="faltaPin" class="camposObligatorios"></p>
             </p>
             <p>
                 <label>Repetir PIN:</label>
-                <input type="text" id="repetirPin" size="30px" required />
-                <!-- minlength="8" maxlength="8" pattern="[0-9]" -->
+                <input type="text" id="repetirPin" pattern="[0-9]{8}" size="30px" required maxlength="8" minlength="8" />
                 <p id="faltaRepetirPin" class="camposObligatorios"></p>
             </p>
             <input type="submit" value="Crear Usuario" id="enviarFormulario" onclick="crearUsuario()" />

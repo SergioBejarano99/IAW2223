@@ -1,7 +1,7 @@
 function calcularImc() {
-    var alturaIngresada = parseInt(document.getElementById('altura').value);
-    var pesoIngresado = parseInt(document.getElementById('peso').value);
-    var imc = pesoIngresado / alturaIngresada * alturaIngresada;
+    let alturaIngresada = parseInt(document.getElementById('altura').value);
+    let pesoIngresado = parseInt(document.getElementById('peso').value);
+    let imc = pesoIngresado / alturaIngresada * alturaIngresada;
 
     if (imc < 18.5) {
         alert('Tu IMC es de ' + Math.round(imc) + ' lo que significa que tienes un Peso inferior al nomral');
