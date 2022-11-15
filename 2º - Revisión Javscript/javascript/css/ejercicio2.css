@@ -1,15 +1,15 @@
 .btn-image {
     background-image: url('https://png.pngtree.com/png-clipart/20190520/original/pngtree-trash-can-logo-icon-design--template-vector-png-image_4004878.jpg');
     background-size: cover;
-    width: 65px;
-    height: 65px;
     float: right;
+    width: 50px;
+    height: 50px;
 }
 
 .tweet {
     width: 500px;
     border: 1px solid gray;
-    border-radius: 10px;
+    height: 50px;
 }
 
 
