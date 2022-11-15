@@ -1,0 +1,105 @@
+<html>
+
+<head>
+    <meta autor="SergioBejarano Arroyo" />
+
+    <meta charset="utf-8">
+    <title>Ejercicio 3</title>
+    <style type="text/css">
+        #patito {
+            width: 200px;
+            height: 200px;
+            display: block;
+            position: relative;
+            background-image: url('patito.png');
+            background-size: 100%;
+
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        #campoJuego {
+            margin: 0 auto;
+            width: 100%;
+            height: 100%;
+            cursor: url('cursor.png'), auto;
+            background-image: url('fondo.jpg');
+            position: absolute;
+        }
+
+        #mensaje {
+            font-weight: bold;
+            color: red;
+            font-size: 400%;
+            position: absolute;
+            text-align: center;
+            padding-left: 40%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="campoJuego">
+        <h1>¡Comprueba tus reflejos!</h1>
+        <h2>¡Haz click en el patito para sumar puntos!</h2>
+        <h2>..pero cuidado, ¡los clics en el agua restan puntos!</h2>
+        <h3 class="bold">Puntos: <span id="puntos"></span></h3>
+        <p id="mensaje">
+            <p id=""></p>
+        </p>
+        <div id="patito"></div>
+    </div>
+    <script type="text/javascript">
+        var puntos = 0; //COMPLETADO
+        function aparecerpatito() {
+            var top = Math.random() * 400;
+            var left = Math.random() * 300;
+            var width = (Math.random() * 100) + 100;
+
+            document.getElementById("patito").style.width = width + "px";
+            document.getElementById("patito").style.height = width + "px";
+
+
+            document.getElementById("patito").style.top = top + "px";
+            document.getElementById("patito").style.left = left + "px";
+
+            document.getElementById("patito").style.display = "block";
+        }
+
+        function desapareceMensaje() {
+            document.getElementById("mensaje").innerHTML = ""; //COMPLETADO
+        }
+
+        function aparecerpatitoDespuesRetraso() {
+            setTimeout(aparecerpatito, Math.random() * 2000);
+
+        }
+
+        function desapareceMensajeDespuesRetraso() {
+            setTimeout(desapareceMensaje, 2000);
+
+        }
+
+        aparecerpatitoDespuesRetraso();
+
+        document.getElementById("campoJuego").onclick = function (e) {
+            if (e.target != document.getElementById("patito")) {
+                puntos = puntos - 1; //COMPLETADO
+                document.getElementById("mensaje").innerHTML = "<p style='color:red'>¡Fallaste!</p>";
+
+            } else {
+                puntos = puntos + 1; //COMPLETADO
+                document.getElementById("mensaje").innerHTML = "<p style='color:green'>¡Acierto!</p>";
+            }
+            document.getElementById("patito").style.display = "none"; //COMPLETADO
+            document.getElementById("puntos").innerHTML = puntos; //COMPLETADO
+
+            aparecerpatitoDespuesRetraso();
+            desapareceMensajeDespuesRetraso();
+        }
+    </script>
+</body>
+
+</html>
