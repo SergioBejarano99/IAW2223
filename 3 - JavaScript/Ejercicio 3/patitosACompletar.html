@@ -45,7 +45,7 @@
         </div>
         <script type="text/javascript">
             /* Sustituye convenientemente los ************ por lo que corresponda */
-            var puntos=************;
+            var puntos = document.getElementById('puntos').value;
             function aparecerpatito()
             {
                 var top = Math.random()*400;
@@ -62,7 +62,7 @@
                 document.getElementById("patito").style.display = "block";
             }
             function desapareceMensaje(){
-                ************ = ""; /* Hacemos que no ponga nada en el mensaje */
+                puntos.innerHTML = ""; /* Hacemos que no ponga nada en el mensaje */
             }
             function aparecerpatitoDespuesRetraso()
             {
