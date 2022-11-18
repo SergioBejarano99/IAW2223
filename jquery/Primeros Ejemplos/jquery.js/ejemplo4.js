@@ -11,8 +11,8 @@ $(document).ready(function () {
         $("#cuartoParrafo").css("font-size", "100%");
     });
 
-    $("#cssModificado").click(function (cssOriginal) {
-        cssOriginal.preventDefault();
+    $("#cssModificado").click(function (cssModificado) {
+        cssModificado.preventDefault();
         $(".parrafoRojo").css({ "color": "red", "font-size": "200%" });
         $(".parrafoAzul").css({ "color": "blue", "font-size": "200%" });
     });
