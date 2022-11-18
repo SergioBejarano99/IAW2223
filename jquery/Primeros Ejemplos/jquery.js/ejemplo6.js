@@ -1,8 +1,8 @@
 $(document).ready(function () {
     $("#anadirEstilosCss").click(function (e) {
         e.preventDefault();
-        $("tr:even").addClass("fondosRojos");
-        $("tr:odd").addClass("fondosAmarillos");
+        $("tr:even").addClass("fondoAzul");
+        $("tr:odd").addClass("fondoVerde");
     });
 
     $("#eliminarEstilosCss").click(function (e) {
