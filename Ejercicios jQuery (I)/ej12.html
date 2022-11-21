@@ -22,14 +22,14 @@
 <body>
     <h1>El método empty() de jQuery</h1>
     <div>
-        Texto
+        <p>Texto</p>
     </div>
-    <button>Vaciar div</button>
+    <button>Mostrar/Ocultar texto</button>
     <script>
        /* Incluye aquí el código jQuery */
-        $(document).ready(function () {
+       $(document).ready(function () {
             $("button").click(function () { 
-                $("div").detach();
+                $("p").toggle();
             });
        });
     </script>

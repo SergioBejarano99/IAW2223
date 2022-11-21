@@ -24,7 +24,11 @@
     <button>Ver val()</button>
     <script>
        /* Incluye aquí el código jQuery */
-        
+        $(document).ready(function () {
+            $("button").click(function () { 
+                $("input:text").val("Sergio Bejarano Arroyo");
+            });
+        });
     </script>
 </body>
 </html>
