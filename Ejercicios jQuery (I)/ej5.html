@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ejercicio 5</title>
+<!-- Incluye jQuery-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+    .contenedor{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        height: 320px;
+    }
+    button {
+        width: 300px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        height: 100px;
+        font-size: 2em;
+    }
+    .caja{
+        width: 300px;
+        height: 300px;
+        border: 1px solid black;
+        margin: 20px;
+    }
+    .roja {
+        background-color: red;
+    }
+    .verde {
+        background-color: green;
+    }
+</style>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="caja roja"></div>
+        <div class="caja verde"></div>
+    </div>
+    <div class="contenedor">
+        <button id="btn-fadeIn">fadeIn</button><button id="btn-fadeOut">fadeOut</button><button id="btn-fadeToggle">fadeToggle</button>
+    </div>
+    <script>
+        /* Rellena esta parte con el código jQuery */
+        $(document).ready(function () {
+            $("#btn-fadeIn").click(function() {
+                $("div.roja").fadeIn();
+                $("div.verde").fadeIn();
+            });
+
+            $("#btn-fadeOut").click(function() {
+                $("div.roja").fadeOut();
+                $("div.verde").fadeOut();
+            });
+
+            $("#btn-fadeToggle").click(function() {
+                $("div.roja").fadeToggle();
+                $("div.verde").fadeToggle();
+            });
+        });
+
+        /* El Método "fadeToggle" alterna con los Métodos "fadeIn" y "fadeOut". */
+    </script>
+</body>
+</html>

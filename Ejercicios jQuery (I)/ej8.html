@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getters en jQuery</title>
+    <style>
+        body {
+            background-color: antiquewhite;
+        }
+        table {
+            border: 1px solid black;
+        }
+        img {
+            border-radius: 10px;
+        }
+    </style>
+    <!-- Incluye aquí jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> 
+</head>
+<body>
+    <h1>getters en jQuery</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quod non vitae nobis dolor ratione blanditiis exercitationem accusamus pariatur, ut voluptas unde sint dignissimos. Quae numquam ipsum pariatur amet veritatis!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quod non vitae nobis dolor ratione blanditiis exercitationem accusamus pariatur, ut voluptas unde sint dignissimos. Quae numquam ipsum pariatur amet veritatis!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quod non vitae nobis dolor ratione blanditiis exercitationem accusamus pariatur, ut voluptas unde sint dignissimos. Quae numquam ipsum pariatur amet veritatis!
+    </p>
+    <img src="https://picsum.photos/330/220" alt="">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia consequuntur voluptate sapiente necessitatibus! <a href=""> Non quisquam </a>quia molestias natus, ipsum deserunt fugit ea voluptatum repellat obcaecati nihil provident. Eos, repudiandae ipsa.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia consequuntur voluptate sapiente necessitatibus! <a href=""> Non quisquam </a>quia molestias natus, ipsum deserunt fugit ea voluptatum repellat obcaecati nihil provident. Eos, repudiandae ipsa.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia consequuntur voluptate sapiente necessitatibus! <a href=""> Non quisquam </a>quia molestias natus, ipsum deserunt fugit ea voluptatum repellat obcaecati nihil provident. Eos, repudiandae ipsa.</p>
+    <p id="parrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia consequuntur voluptate sapiente necessitatibus! <a href=""> Non quisquam </a>quia molestias natus, ipsum deserunt fugit ea voluptatum repellat obcaecati nihil provident. Eos, repudiandae ipsa.. Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia consequuntur voluptate sapiente necessitatibus! <a href=""> Non quisquam </a>quia molestias natus, ipsum deserunt fugit ea voluptatum repellat obcaecati nihil provident. Eos, repudiandae ipsa.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia consequuntur voluptate sapiente necessitatibus! <a href=""> Non quisquam </a>quia molestias natus, ipsum deserunt fugit ea voluptatum repellat obcaecati nihil provident. Eos, repudiandae <ipsa class="Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia consequuntur voluptate sapiente necessitatibus! <a href=""> Non quisquam </a>quia molestias natus, ipsum deserunt fugit ea voluptatum repellat obcaecati nihil provident. Eos, repudiandae ipsa.
+            "></ipsa>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio corrupti commodi temporibus vitae tempora accusamus, <a href="">illo perferendis eveniet</a> aliquam praesentium molestias quidem atque animi nisi adipisci quasi voluptates ad porro.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error eaque sit nemo! Voluptatem expedita hic ipsam minima eligendi id, labore non veritatis <a href="">atque amet ipsum mollitia</a>  dignissimos? Mollitia, fuga ea!</p>
+    <button id="btn-imagen">Obtener src de la imagen</button>
+    <button id="btn-encabezado">Obtener texto del encabezado</button>
+    <button id="btn-parrafo">Obtener html de un párrafo</button>
+
+    <script>
+       /* Rellena aquí el código jQuery */
+        $(document).ready(function(){
+            $("#btn-imagen").click(function(){
+                alert($("img").attr("src"));
+            });
+
+            $("#btn-encabezado").click(function(){
+                alert($("img").attr("value"));
+            });
+            $("#btn-parrafo").click(function(){
+                alert($("img").attr("src"));
+            });
+        });
+    </script>
+</body>
+</html>
