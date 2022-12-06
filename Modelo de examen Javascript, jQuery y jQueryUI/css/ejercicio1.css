@@ -1,0 +1,48 @@
+form {
+    padding-left: 5px;
+}
+
+label {
+    margin-right: 10px;
+}
+
+input {
+    width: 250px;
+}
+
+#contrasena {
+    width: 310px;
+}
+
+#condiciones {
+    width: auto;
+}
+
+textarea {
+    width: 300px;
+    height: 100px;
+}
+
+label[for=condiciones] {
+    margin-right: 0px;
+}
+
+#enviarFormulario {
+    width: 60px;
+    margin-right: 10px;
+}
+
+span {
+    color: red;
+}
+
+#usuarioCreado {
+    color: green;
+    font-weight: bold;
+}
+
+
+
+
+
+/* © Sergio Bejarano Arroyo */

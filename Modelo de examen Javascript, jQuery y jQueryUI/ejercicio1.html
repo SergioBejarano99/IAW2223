@@ -1,36 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio 1</title>
 
+    <link rel="stylesheet" href="css/ejercicio1.css">
+    <script src="js/ejercicio1.js"></script>
     <meta autor="Sergio Bejarano Arroyo" />
 </head>
+
 <body>
-    <form action="">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" placeholder="Escribe tu Nombre" required><br>
-        <label for="apellido1">Primer Apellido:</label>
-        <input type="text" id="apellido1" placeholder="Escribe tu Primer Apellido" required><br>
-        <label for="apellido2">Segundo Apellido:</label>
-        <input type="text" id="apellido2" placeholder="Escribe tu Segudo Apellido" required><br>
-        <label for="dni">DNI:</label>
-        <input type="text" id="dni" placeholder="Escribe tu DNI" required></form>
-        <label for="email">Email:</label>
-        <input type="email" id="email" placeholder="Escribe tu Email" required><br>
-        <label for="password">Password1:</label>
-        <input type="password" id="password" placeholder="Escribe una Contraseña" required><br>
-        <label for="repassword">Password2:</label>
-        <input type="repassword" id="repassword" placeholder="Repite la Contraseña" required><br>
-        <label for="descripcion">Descripción:</label><br>
-        <textarea id="descripcion" required></textarea><br>
-        <label for="fechaNacimiento">Fecha de Nacimiento:</label>
-        <input type="date" id="fechaNacimiento" required><br>
-        <label for="terminosCondiciones">Aceptar Términos y Condiciones:</label>
-        <input type="checkbox" id="terminosCondiciones" required><br>
-        <input type="submit" value="Enviar">
+    <h1>FORMULARIO</h1>
+    <form method="post">
+        <p>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" placeholder="Esrite tu Nombre." required>
+        </p>
+        <p>
+            <label for="apellido1">Apellido1:</label>
+            <input type="text" id="apellido1" placeholder="Escribe tu Primer Apellido." required>
+        </p>
+        <p>
+            <label for="apellido2">Apellido2:</label>
+            <input type="text" id="apellido2" placeholder="Escribe tu Segudon Apellido." required>
+        </p>
+        <p>
+            <label for="dni">DNI:</label>
+            <input type="text" id="dni" placeholder="Escribe tu DNI." required>
+        </p>
+        <p>
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Escribe tu Correo Electrónico." required>
+        </p>
+        <p>
+            <label for="contrasena">Contraseña:</label>
+            <input type="password" id="contrasena" minlength="8"
+                placeholder="Escribe una Contraseña de 8 Dígitos como mínimo." required>
+        </p>
+        <p>
+            <label for="repiteContrasena">Repite Contraseña:</label>
+            <input type="password" id="repiteContrasena" minlength="8" placeholder="Repite la Contraseña." required>
+        </p>
+        <p>
+            <label for="descripcion">Descripción:</label><br>
+            <textarea id="descripcion" placeholder="Añade una Descripción."></textarea>
+        </p>
+        <p>
+            <label for="fechanacimiento">Fecha de Nacimiento:</label>
+            <input type="date" id="fechaNacimiento">
+        </p>
+        <p>
+            <label for="condiciones">Acepto el Tratamiento de Datos Personales por parte de esta Web</label>
+            <input type="checkbox" id="condiciones" required>
+        </p>
+        <p>
+            <input type="submit" value="Enviar" id="enviarFormulario" onclick="crearUsuario()"><span
+                id="faltaNombre"></span><span id="faltaApellido1"></span><span id="faltaApellido2"></span><span
+                id="faltaDni"></span><span id="dniIncorrecto"></span>
+            <!--<span id="emailIncorrecto"></span>--><span id="faltaEmail"></span><span
+                id="faltaContrasena"></span><span id="contrasenasDiferentes"></span><span id="desaprobado"></span>
+        </p>
+        <p id="usuarioCreado"></p>
     </form>
 </body>
+
 </html>
