@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+
+    <link rel="stylesheet" href="css/ejercicio2.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <meta autor="Sergio Bejarano Arroyo" />
+</head>
+
+<body>
+    <h1>CONSULTAR LIBROS</h1>
+
+    <form>
+        <input type="button" value="Ver Catálogo" id="verCatalogo"><br>
+        <input type="text" id="introducirId" placeholder="Introduce un ID Numérico Positivo.">
+        <input type="button" value="Consultar por ID Libro." onclick="consultarLibro()"><span id="idInvalido">No has
+            introducido un Número Entero Positivo o el ID que has introducido no corresponde a ningún Libro.</span>
+    </form>
+
+    <div id="libroCompleto"></div>
+    <div id="libroConsultado">
+        <p id="titulo"></p>
+        <p id="autor"></p>
+        <p>
+            <img src="" id="imagen">
+        </p>
+        <p id="enlaceDescarga"></p>
+        <p id="numeroDescargas"></p>
+    </div>
+    <script>
+        let url = "https://gutendex.com";
+        $.get(url).done(function (r) {
+            console.log(r);
+            $("#autor").text(r.get);
+        });
+    </script>
+</body>
+
+</html>
