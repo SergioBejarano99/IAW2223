@@ -1,57 +1,49 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 3</title>
+    <title>Reserva de habitaciones</title>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="https://code.jquery.com/resources/demos/style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-
-    <meta autor="Sergio Bejarano Arroyo" />
     <style>
         body {
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
             background-color: lightgreen;
             font-size: 1.5em;
         }
-
-        .container {
-            display: flex;
+        .container{
+            display:flex;
             align-items: center;
             justify-content: center;
             border: 1px solid black;
             border-radius: 10px;
             margin: 0 auto;
-            width: 50%;
+            width:  50%;
             padding: 50px;
             background-color: lightgoldenrodyellow;
         }
-
         h1 {
             margin-top: 50px;
-            text-align: center;
+            text-align:center;
         }
-
         input {
             font-size: 1em;
             text-align: center;
-            width: 10%;
+            width:10%;
         }
-
         input[type="text"] {
             font-size: 1em;
             text-align: center;
-            width: 20%;
+            width:20%;
         }
     </style>
 </head>
-
 <body>
-    <h1>.: Reserva de Habitaciones :.</h1>
+    <h1>.: Reserva de habitaciones :.</h1>
     <div class="container">
         <form action="">
             <input min="0" type="number" name="individual" id="num_individuales" value="0">
@@ -68,39 +60,31 @@
             <p id="totalDias">Total días: </p>
             <p id="totalPrecio">Precio: </p>
         </form>
-    </div>
+     </div>
     <script>
         /* Ponemos los selectores de fecha en español */
         $.datepicker.regional['es'] = {
-            closeText: 'Cerrar',
-            prevText: '<Ant',
-            nextText: 'Sig>',
-            currentText: 'Hoy',
-            monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre',
-                'Octubre', 'Noviembre', 'Diciembre'
-            ],
-            monthNamesShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
-            dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
-            dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mié', 'Juv', 'Vie', 'Sáb'],
-            dayNamesMin: ['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sá'],
-            weekHeader: 'Sm',
-            dateFormat: 'dd/mm/yy',
-            firstDay: 1,
-            isRTL: false,
-            showMonthAfterYear: false,
-            yearSuffix: ''
+                closeText: 'Cerrar',
+                prevText: '<Ant',
+                nextText: 'Sig>',
+                currentText: 'Hoy',
+                monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+                monthNamesShort: ['Ene','Feb','Mar','Abr', 'May','Jun','Jul','Ago','Sep', 'Oct','Nov','Dic'],
+                dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+                dayNamesShort: ['Dom','Lun','Mar','Mié','Juv','Vie','Sáb'],
+                dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
+                weekHeader: 'Sm',
+                dateFormat: 'dd/mm/yy',
+                firstDay: 1,
+                isRTL: false,
+                showMonthAfterYear: false,
+                yearSuffix: ''
         };
         $.datepicker.setDefaults($.datepicker.regional['es']);
         $(document).ready(function () {
-            $("#f_entrada").datepicker({
-                minDate: 1,
-                maxDate: "+1Y"
-            });
-            $("#f_salida").datepicker({
-                minDate: 2,
-                maxDate: "+1Y+1D"
-            });
-            $("#calculo").click(function (e) {
+            $("#f_entrada").datepicker({ minDate: 1, maxDate: "+1Y"});
+            $("#f_salida").datepicker({ minDate: 2, maxDate: "+1Y+1D" });
+            $("#calculo").click(function (e) { 
                 e.preventDefault();
                 let i = $("#num_individuales").val();
                 let d = $("#num_dobles").val();
@@ -108,19 +92,19 @@
                 let desde = $("#f_entrada").datepicker('getDate');
                 let hasta = $("#f_salida").datepicker('getDate');
                 let diff = new Date(hasta - desde);
-                let dias = diff / 1000 / 60 / 60 / 24;
-                let pdias = dias * i * 25 + dias * d * 45 + dias * t * 80;
-                if (pdias < 0 || diff < 0) {
+                let dias = diff/1000/60/60/24;
+                let pdias = dias*i*25+dias*d*45+dias*t*80;
+                if (pdias<0 || diff<0){
                     $("#totalDias").html("Total días: 0");
                     $("#totalPrecio").html("Precio: 0 €");
-                } else {
+                }
+                else{
                     $("#totalDias").html("Total días: " + dias);
                     $("#totalPrecio").html("Precio: " + pdias + " €");
                 }
-
+                
             });
         });
     </script>
 </body>
-
 </html>
