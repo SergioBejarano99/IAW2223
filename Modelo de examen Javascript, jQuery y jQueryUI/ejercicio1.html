@@ -17,32 +17,37 @@
     <form method="post">
         <p>
             <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" placeholder="Esrite tu Nombre." required>
+            <input type="text" id="nombre" placeholder="Esrite tu Nombre." required><span id="faltaNombre"></span>
         </p>
         <p>
             <label for="apellido1">Apellido1:</label>
-            <input type="text" id="apellido1" placeholder="Escribe tu Primer Apellido." required>
+            <input type="text" id="apellido1" placeholder="Escribe tu Primer Apellido." required><span
+                id="faltaApellido1"></span>
         </p>
         <p>
             <label for="apellido2">Apellido2:</label>
-            <input type="text" id="apellido2" placeholder="Escribe tu Segudon Apellido." required>
+            <input type="text" id="apellido2" placeholder="Escribe tu Segudon Apellido." required><span
+                id="faltaApellido2"></span>
         </p>
         <p>
             <label for="dni">DNI:</label>
-            <input type="text" id="dni" placeholder="Escribe tu DNI." required>
+            <input type="text" id="dni" placeholder="Escribe tu DNI." required><span id="faltaDni"></span>
         </p>
         <p>
             <label for="email">Email:</label>
-            <input type="email" id="email" placeholder="Escribe tu Correo Electrónico." required>
+            <input type="email" id="email" placeholder="Escribe tu Correo Electrónico." required><span
+                id="faltaEmail"></span>
         </p>
         <p>
             <label for="contrasena">Contraseña:</label>
             <input type="password" id="contrasena" minlength="8"
-                placeholder="Escribe una Contraseña de 8 Dígitos como mínimo." required>
+                placeholder="Escribe una Contraseña de 8 Dígitos como mínimo." required><span
+                id="faltaContrasena"></span>
         </p>
         <p>
             <label for="repiteContrasena">Repite Contraseña:</label>
-            <input type="password" id="repiteContrasena" minlength="8" placeholder="Repite la Contraseña." required>
+            <input type="password" id="repiteContrasena" minlength="8" placeholder="Repite la Contraseña."
+                required><span id="contrasenasDiferentes"></span>
         </p>
         <p>
             <label for="descripcion">Descripción:</label><br>
@@ -54,14 +59,10 @@
         </p>
         <p>
             <label for="condiciones">Acepto el Tratamiento de Datos Personales por parte de esta Web</label>
-            <input type="checkbox" id="condiciones" required>
+            <input type="checkbox" id="condiciones" required><span id="faltaTerminos"></span>
         </p>
         <p>
-            <input type="submit" value="Enviar" id="enviarFormulario" onclick="crearUsuario()"><span
-                id="faltaNombre"></span><span id="faltaApellido1"></span><span id="faltaApellido2"></span><span
-                id="faltaDni"></span><span id="dniIncorrecto"></span>
-            <!--<span id="emailIncorrecto"></span>--><span id="faltaEmail"></span><span
-                id="faltaContrasena"></span><span id="contrasenasDiferentes"></span><span id="desaprobado"></span>
+            <input type="submit" value="Enviar" id="enviarFormulario" onclick="crearUsuario()">
         </p>
         <p id="usuarioCreado"></p>
     </form>
