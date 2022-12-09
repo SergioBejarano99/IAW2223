@@ -1,21 +1,52 @@
-form {
+body {
+    font-family: 'Alexandria', sans-serif;
+}
+
+h1 {
+    font-size: xx-large;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+}
+
+.formulario {
+    width: 80%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    margin: 50px auto;
+    background-color: rgb(133, 181, 197);
+    border-radius: 10px;
+    padding: 50px;
+    box-shadow: 10px 10px 10px #7c7e8b;
+    overflow: auto;
+}
+
+.formulario>* {
     margin: 10px;
+    padding: 10px;
 }
 
-#introducirId {
-    width: 210px;
+input,
+label {
+    font-size: 1.5em;
 }
 
-input {
-    margin-right: 5px;
-}
-
-#verCatalogo {
-    margin-bottom: 5px;
-}
-
-span {
-    color: red;
+button {
+    background-color: #091661;
+    font-size: x-large;
+    height: 60px;
+    width: 25%;
+    border-radius: 20px;
+    color: white;
+    margin-left: 2%;
+    margin-top: 1%;
 }
 
 

@@ -5,40 +5,81 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alexandria">
     <title>Ejercicio 2</title>
 
     <link rel="stylesheet" href="css/ejercicio2.css">
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 
     <meta autor="Sergio Bejarano Arroyo" />
 </head>
 
 <body>
-    <h1>CONSULTAR LIBROS</h1>
-
-    <form>
-        <input type="button" value="Ver Catálogo" id="verCatalogo"><br>
-        <input type="text" id="introducirId" placeholder="Introduce un ID Numérico Positivo.">
-        <input type="button" value="Consultar por ID Libro." onclick="consultarLibro()"><span id="idInvalido">No has
-            introducido un Número Entero Positivo o el ID que has introducido no corresponde a ningún Libro.</span>
-    </form>
-
-    <div id="libroCompleto"></div>
-    <div id="libroConsultado">
-        <p id="titulo"></p>
-        <p id="autor"></p>
-        <p>
-            <img src="" id="imagen">
-        </p>
-        <p id="enlaceDescarga"></p>
-        <p id="numeroDescargas"></p>
+    <div class="contendor">
+        <div class="formulario">
+            <h1>Gutendex API</h1>
+            <label for="codlibro">Código Libro:</label>
+            <input type="number" name="codLibro" id="codLibro" min="1">
+            <br>
+            <label for="botones">Acción:</label>
+            <button id="btn-libro">Obtener libro</button>
+            <button id="btn-todos">Ver todos</button>
+            <div id="resultados">
+                <!-- Aqui cargaremos los resultados-->
+            </div>
+        </div>
     </div>
     <script>
-        let url = "https://gutendex.com";
-        $.get(url).done(function (r) {
-            console.log(r);
-            $("#autor").text(r.get);
+        $(document).ready(function () {
+            $("#btn-libro").click(function (e) {
+                e.preventDefault();
+                let codigo = $("#codLibro").val();
+                $("#resultados").empty(); //Para limpiar lo que hubiera antes.
+                $.get("https://gutendex.com/books/" + codigo).done(function (respuesta) {
+                    console.log(respuesta);
+                    let titulo = respuesta.title;
+                    let autor = respuesta.authors.lenght == 0 ? "Anónimo" : respuesta.authors[0]
+                        .name;
+                    let imagen = respuesta.formats['image/jpeg'];
+                    let enlace = respuesta.formats['text/plain; charset=us-ascii'];
+                    let numeroDescargas = respuesta.download_count;
+                    $("#resultados").append(
+                        '<p><img width="120px" src="' + imagen + '"></p>' +
+                        '<p>Título: ' + titulo + '</p>' +
+                        '<p>Autor: ' + autor + '</p>' +
+                        '<p><a target="_blank" href="' + enlace +
+                        '">Descarga aquí</a></p>' +
+                        '<p>Nº Descargas: ' + numeroDescargas + '</p>'
+                    );
+                }).fail(function () {
+                    alert("Error en el Servidor.");
+                });
+            });
+            $("#btn-todo").click(function (e) {
+                e.preventDefault();
+                $.get("https://gutendex.com/books/" + codigo).done(function (r) {
+                    console.log(respuesta);
+                    let num libros = r.results.lenght;
+                    for (let i = 0; i < num_libros; i++) {}
+                    let titulo = respuesta.title;
+                    let autor = respuesta.authors.lenght == 0 ? "Anónimo" : respuesta.authors[0]
+                        .name;
+                    let imagen = respuesta.formats['image/jpeg'];
+                    let enlace = respuesta.formats['text/plain; charset=us-ascii'];
+                    let numeroDescargas = respuesta.download_count;
+                    $("#resultados").append(
+                        '<p><img width="120px" src="' + imagen + '"></p>' +
+                        '<p>Título: ' + titulo + '</p>' +
+                        '<p>Autor: ' + autor + '</p>' +
+                        '<p><a target="_blank" href="' + enlace +
+                        '">Descarga aquí</a></p>' +
+                        '<p>Nº Descargas: ' + numeroDescargas + '</p>'
+                    );
+                }).fail(function () {
+                    alert("Error en el Servidor.");
+                });
+            });
         });
     </script>
 </body>
