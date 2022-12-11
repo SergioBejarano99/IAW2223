@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
 
     <meta autor="Sergio Bejarano Arroyo" />
 </head>
+
 <body>
     <h1>Tios de Datos en PHP con var_dump</h1>
 
@@ -27,6 +29,7 @@
     var_dump($booleanas);
     print "<br>";
     var_dump($arrays);
-?>
+    ?>
 </body>
+
 </html>
