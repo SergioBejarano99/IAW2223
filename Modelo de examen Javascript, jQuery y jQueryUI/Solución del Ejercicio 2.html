@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alexandria">
+    <title>Visualizador libros</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: 'Alexandria', sans-serif;
+        }
+        h1{
+            font-size: xx-large;
+            text-align: center;
+            margin: 0 auto;
+        }
+        .contenedor {
+            display: flex;
+            flex-wrap:wrap;
+            flex-direction: column;
+           
+        }
+        .formulario {
+            width: 80%;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+            margin: 50px auto;
+            background-color: rgb(133, 181, 197);
+            border-radius: 10px;
+            padding: 50px;
+            box-shadow: 10px 10px 10px #7c7e8b;
+            overflow:auto;
+        }
+        .formulario > * {
+            margin: 10px;
+            padding: 10px;
+        }
+        input, label {
+            font-size: 1.5em;
+        }
+        button {
+            background-color:#091661;
+            font-size: x-large;
+            height: 60px;
+            width: 25%;
+            border-radius: 20px;
+            color: white;
+            margin-left: 2%;
+            margin-top: 1%;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="formulario">
+            <h1>Gutendex API</h1>
+            <label for="codlibro">Código Libro:</label>
+            <input type="number" name="codLibro" id="codLibro" min="1">
+            <br>
+            <label for="botones">Acción:</label>
+            <button id="btn-libro">Obtener libro</button>
+            <button id="btn-todos">Ver todos</button>
+            <div id="resultados">
+                <!-- Aqui cargaremos los resultados-->
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $("#btn-todos").click(function (e) { 
+                e.preventDefault();
+                $.get("https://gutendex.com/books/").done(function (r){
+                    let num_libros = r.results.length;
+                    $("#resultados").empty();
+                    for (let i=0; i<num_libros; i++){
+                        let respuesta = new Object(r.results[i]);
+                        let titulo = respuesta.title;
+                        let autor = respuesta.authors.length == 0 ? "Anónimo" : respuesta.authors[0].name;
+                        let imagen = respuesta.formats['image/jpeg'];
+                        let enlace = respuesta.formats['text/plain; charset=us-ascii'];
+                        let numeroDescargas = respuesta.download_count;
+                        $('#resultados').append(
+                            '<p>'+'<img width="120" src="'+imagen+'"></p>' +
+                            '<p>Título: '+titulo+'</p>' + 
+                            '<p>Autor: '+autor+'</p>' + 
+                            '<p><a href="'+enlace+'" target="_blank">Descarga aquí</a></p>' + 
+                            '<p>Nº descargas: ' + numeroDescargas + '</p>');
+                    }
+                });
+            });
+            $("#btn-libro").click(function(){
+                let codigo = $("#codLibro").val();
+                $.get("https://gutendex.com/books/"+codigo).done(function (respuesta){
+                    console.log(respuesta);
+                    let titulo = respuesta.title;
+                    let autor = respuesta.authors.length == 0 ? "Anónimo" : respuesta.authors[0].name;
+                    let imagen = respuesta.formats['image/jpeg'];
+                    let enlace = respuesta.formats['text/plain; charset=us-ascii'];
+                    let numeroDescargas = respuesta.download_count;
+                    $("#resultados").empty();
+                    $('#resultados').append(
+                        '<p>'+'<img width="120" src="'+imagen+'"></p>' +
+                        '<p>Título: '+titulo+'</p>' + 
+                        '<p>Autor: '+autor+'</p>' + 
+                        '<p><a href="'+enlace+'" target="_blank">Descarga aquí</a></p>' + 
+                        '<p>Nº descargas: ' + numeroDescargas + '</p>');
+                }).fail(function (respuesta){
+                    alert("Error en este libro");
+                });
+                /*
+                $.ajax({
+                    type: "GET",
+                    url: "https://gutendex.com/books/"+codigo,
+                    contentType: "application/json",
+                    success: function (respuesta){
+                        let titulo = respuesta.title;
+                        let autor = respuesta.authors[0].name;
+                        let imagen = respuesta.formats['image/jpeg'];
+                        let enlace = respuesta.formats['text/plain; charset=us-ascii'];
+                        let numeroDescargas = respuesta.download_count;
+                        $("#resultados").empty();
+                        $('#resultados').append(
+                            '<p>'+'<img width="120" src="'+imagen+'"></p>' +
+                            '<p>Título: '+titulo+'</p>' + 
+                            '<p>Autor: '+autor+'</p>' + 
+                            '<p><a href="'+enlace+'" target="_blank">Descarga aquí</a></p>' + 
+                            '<p>Nº descargas: ' + numeroDescargas + '</p>');
+                    },
+                    error: function (error){
+                        alert(error);
+                    }
+                });
+                */
+            })
+        });
+    </script>
+</body>
+</html>
