@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alexandria">
+    <title>Fake Store API</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+    <meta autor="Sergio Bejarano Arroyo" />
+    <style>
+        body {
+            font-family: 'Alexandria', sans-serif;
+        }
+
+        h1 {
+            font-size: xx-large;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .contenedor {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+        }
+
+        .formulario {
+            width: 80%;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+            margin: 50px auto;
+            background-color: rgb(255, 255, 255);
+            border-radius: 10px;
+            padding: 50px;
+            box-shadow: 10px 10px 10px #7c7e8b;
+            overflow: auto;
+            border: 1px dashed black;
+
+        }
+
+        .formulario>* {
+            margin: 10px;
+            padding: 10px;
+        }
+
+        input,
+        label {
+            font-size: 1.5em;
+        }
+
+        button {
+            background-color: #373841;
+            font-size: x-large;
+            height: 60px;
+            width: 25%;
+            border-radius: 20px;
+            color: white;
+            margin-left: 2%;
+            margin-top: 1%;
+        }
+
+        button:hover {
+            background-color: #545662;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="contenedor">
+        <div class="formulario">
+            <h1>Fake Store API</h1>
+            <label for="codProducto">Código producto:</label>
+            <input min="1" type="number" name="codProducto" id="codProducto" value="1"><br>
+            <label for="botones">Acción:</label>
+            <button id="btn-producto">Obtener producto</button>
+            <button id="btn-todos">Ver todos</button>
+            <div id="resultados">
+                <!-- Aqui cargaremos los resultados-->
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $("#btn-todos").click(function (e) {
+                e.preventDefault();
+                $.get("'https://fakestoreapi.com/products/").done(function (r) {
+                    let num_productos = r.results.length;
+                    $("#resultados").empty();
+                    for (let i = 0; i < num_productos; i++) {
+                        let respuesta = new Object(r.results[i]);
+                        let imagen = respuesta.image;
+                        let titulo = respuesta.title;
+                        let descripcion = respuesta.description;
+                        let precio = respuesta.price;
+                        $('#resultados').append(
+                            '<h1>' + titulo + '</h1>' +
+                            '<p>' + '<img width="120" src="' + imagen + '"></p>' +
+                            '<p>' + descripcion + '</p>' +
+                            '<p>' + precio + ' €</p>');
+                    }
+                });
+            });
+            $("#btn-producto").click(function () {
+                let codigo = $("#codProducto").val();
+                $.get("https://fakestoreapi.com/products/" + codigo).done(function (respuesta) {
+                    console.log(respuesta);
+                    let imagen = respuesta.image;
+                    let titulo = respuesta.title;
+                    let descripcion = respuesta.description;
+                    let precio = respuesta.price;
+
+                    $("#resultados").empty();
+                    $('#resultados').append(
+                        '<h1>' + titulo + '</h1>' +
+                        '<p>' + '<img width="120px" src="' + imagen + '"></p>' +
+                        '<p>' + descripcion + '</p>' +
+                        '<p>' + precio + ' €</p>');
+                }).fail(function (respuesta) {
+                    alert("Error cargando datos del servidor");
+                });
+            })
+        });
+    </script>
+</body>
+
+</html>

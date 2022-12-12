@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pádel</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://code.jquery.com/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
+
+    <meta autor="Sergio Bejarano Arroyo" />
+    <style>
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background-color: rgb(238, 198, 146);
+            font-size: 1.5em;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid black;
+            border-radius: 10px;
+            margin: 0 auto;
+            width: 50vw;
+            padding: 50px;
+            background-color: lightgoldenrodyellow;
+        }
+
+        h1 {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        select {
+            font-size: 1em;
+            text-align: center;
+            width: 52vw;
+        }
+
+        input[type="text"] {
+            font-size: 1em;
+            text-align: center;
+            width: 51vw;
+        }
+
+        input[type="checkbox"] {
+            width: 3vh;
+            text-align: left !important;
+        }
+
+        button {
+            font-size: 1em;
+            text-align: center;
+            width: 52vw;
+            background-color: rgb(238, 198, 146);
+            border-radius: 10px;
+            margin-top: 0.5em;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Reserva pista pádel</h1>
+    <div class="container">
+        <form action="">
+            <label for="fecha">Día del partido:</label>
+            <br><input type="text" name="fecha" id="fecha">
+            <br>
+            <label for="pista">Selecciona pista:</label> <br>
+            <select id="pista" name="pista">
+                <option value="1">Pista Nº 1</option>
+                <option value="2">Pista Nº 2</option>
+                <option value="3">Pista Nº 3</option>
+                <option value="4">Pista Nº 4</option>
+            </select>
+            <br>
+            <label for="hora">Hora del partido:</label>
+            <br>
+            <select id="hora" name="hora">
+                <option value="1" id="nueveEnPunto">9:00 - 10:00 (10 €)</option>
+                <option value="2" id="diezEnPunto">10:00 - 11:00 (10 €)</option>
+                <option value="3" id="onceEnPunto">11:00 - 12:00 (10 €)</option>
+                <option value="4" id="doceEnPunto">12:00 - 13:00 (10 €)</option>
+                <option value="5" id="treceEnPunto">13:00 - 14:00 (12 €)</option>
+                <option value="6" id="catorceEnPunto">14:00 - 15:00 (12 €)</option>
+                <option value="7" id="dieciochoEnPunto">18:00 - 19:00 (16 €)</option>
+                <option value="8" id="diecinueveEnPunto">19:00 - 20:00 (16 €)</option>
+                <option value="9" id="veinteEnPunto">20:00 - 21:00 (16 €)</option>
+            </select>
+            <br>
+            <label for="luz">Marque si necesita luz en pista (+ 4€):</label>
+            <input type="checkbox" name="luz" id="luz">
+            <br>
+            <button id="reserva">Reserva</button>
+            <p id="diaReserva"></p>
+            <p id="totalPrecio">Precio: </p>
+        </form>
+    </div>
+    <script>
+        $.datepicker.regional['es'] = {
+            closeText: 'Cerrar',
+            prevText: '<Ant',
+            nextText: 'Sig>',
+            currentText: 'Hoy',
+            monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre',
+                'Octubre', 'Noviembre', 'Diciembre'
+            ],
+            monthNamesShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+            dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+            dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mié', 'Juv', 'Vie', 'Sáb'],
+            dayNamesMin: ['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sá'],
+            weekHeader: 'Sm',
+            dateFormat: 'dd/mm/yy',
+            firstDay: 1,
+            isRTL: false,
+            showMonthAfterYear: false,
+            yearSuffix: ''
+        };
+        $.datepicker.setDefaults($.datepicker.regional['es']);
+        $(document).ready(function () {
+            $("#fecha").datepicker({
+                minDate: 1,
+                maxDate: "+1Y"
+            });
+            $("#fecha").datepicker({
+                minDate: 2,
+                maxDate: "+1Y+1D"
+            });
+            $("#reserva").click(function (e) {
+                e.preventDefault();
+                let i = $("#num_individuales").val();
+                let d = $("#num_dobles").val();
+                let t = $("#num_triples").val();
+                let desde = $("#fecha").datepicker('getDate');
+                let hasta = $("#fecha").datepicker('getDate');
+                let diff = new Date(hasta - desde);
+                let dias = diff / 1000 / 60 / 60 / 24;
+                let luzPista = document.getElementById('luz').checked;
+                let pdias;
+
+                if (luzPista == true) {
+                    if ($('#hora').val().trim() === '1') {
+                        pdias = 10 + 4;
+                    } else if ($('#hora').val().trim() === '2') {
+                        pdias = 10 + 4;
+                    } else if ($('#hora').val().trim() === '3') {
+                        pdias = 10 + 4;
+                    } else if ($('#hora').val().trim() === '4') {
+                        pdias = 10 + 4;
+                    } else if ($('#hora').val().trim() === '5') {
+                        pdias = 12 + 4;
+                    } else if ($('#hora').val().trim() === '6') {
+                        pdias = 12 + 4;
+                    } else if ($('#hora').val().trim() === '7') {
+                        pdias = 16 + 4;
+                    } else if ($('#hora').val().trim() === '8') {
+                        pdias = 16 + 4;
+                    } else if ($('#hora').val().trim() === '9') {
+                        pdias = 16 + 4;
+                    }
+                } else {
+                    if ($('#hora').val().trim() === '1') {
+                        pdias = 10;
+                    } else if ($('#hora').val().trim() === '2') {
+                        pdias = 10;
+                    } else if ($('#hora').val().trim() === '3') {
+                        pdias = 10;
+                    } else if ($('#hora').val().trim() === '4') {
+                        pdias = 10;
+                    } else if ($('#hora').val().trim() === '5') {
+                        pdias = 12;
+                    } else if ($('#hora').val().trim() === '6') {
+                        pdias = 12;
+                    } else if ($('#hora').val().trim() === '7') {
+                        pdias = 16;
+                    } else if ($('#hora').val().trim() === '8') {
+                        pdias = 16;
+                    } else if ($('#hora').val().trim() === '9') {
+                        pdias = 16;
+                    }
+                }
+
+                if (pdias < 0 || diff < 0) {
+                    $("#totalPrecio").html("Precio: 0 €");
+                } else {
+                    $("#totalPrecio").html("Precio: " + pdias + " €");
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
