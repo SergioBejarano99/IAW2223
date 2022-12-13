@@ -10,11 +10,21 @@
     <meta autor="Sergio Bejarano Arroyo" />
 </head>
 
+<style>
+    img {
+        width: 400px;
+    }
+</style>
+
 <body>
     <h1>IMÁGENES ALEATORIAS</h1>
 
     <?php
+    $imagenes = ['calle.jpg', 'camara.jpg', 'chispas.jpg', 'coche.jpg', 'edificio.jpg', 'montanas.jpg', 'planta.jpg', 'playa.jpg', 'templo.jpg', 'tigre.jpg'];
 
+    $i = rand(0, count($imagenes));
+
+    echo '<img src="' . $imagenes[$i] . '">';
     ?>
 </body>
 

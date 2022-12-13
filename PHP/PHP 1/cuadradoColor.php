@@ -13,14 +13,12 @@
 <body>
     <h1>CAJA DE COLOR ALEATORIO</h1>
 
-    <div style="background-color:<?php echo $colorAleatorio ?>; width:300px; height:300px;"></div>
-
     <?php
     $colorRed = rand(0, 255);
     $colorGreen = rand(0, 255);
     $colorBlue = rand(0, 255);
 
-    $colorAleatorio = 'rgb(' . $colorRed . ', ' . $colorGreen . ', ' . $colorBlue . ')';
+    echo '<div style="background-color: rgb(' . $colorRed . ',' . $colorGreen . ',' . $colorBlue . '); width:300px; height:300px;"></div>';
     ?>
 </body>
 
