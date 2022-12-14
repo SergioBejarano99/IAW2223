@@ -16,7 +16,7 @@
     <?php
     $hora24h = date("H:i:s");
     $fechaCorta = date("d/m/Y");
-    $diasSemana = array("Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sábado");
+    $diasSemana = array("Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado");
     $mesesEspanol = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
 
     echo '<h4>Fecha y Hora Original:</h4>';
