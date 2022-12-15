@@ -20,11 +20,11 @@
     <h1>IMÁGENES ALEATORIAS</h1>
 
     <?php
-    $imagenes = ['calle.jpg', 'camara.jpg', 'chispas.jpg', 'coche.jpg', 'edificio.jpg', 'montanas.jpg', 'planta.jpg', 'playa.jpg', 'templo.jpg', 'tigre.jpg'];
+    $imagenes = ['img/calle.jpg', 'img/camara.jpg', 'img/chispas.jpg', 'img/coche.jpg', 'img/edificio.jpg', 'img/montanas.jpg', 'img/planta.jpg', 'img/playa.jpg', 'img/templo.jpg', 'img/tigre.jpg'];
 
-    $i = rand(0, count($imagenes));
+    $posicion = rand(0, count($imagenes));
 
-    echo '<img src="' . $imagenes[$i] . '">';
+    echo '<img src="' . $imagenes[$posicion] . '">';
     ?>
 </body>
 
