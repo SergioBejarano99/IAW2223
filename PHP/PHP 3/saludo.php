@@ -14,7 +14,7 @@
     <h1>SALUDO</h1>
 
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-        <label>Introduce tun Nombre:</label>
+        <label>Introduce tu Nombre:</label>
         <input type="text" name="nombre" placeholder="Escribe tu nombre">
         <input type="submit" value="Enviar">
     </form>
