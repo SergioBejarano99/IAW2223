@@ -20,11 +20,24 @@
     </form>
 
     <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $nombreIntroducido = htmlspecialchars($_POST['nombre']);
-        $fechaActual = date('d/m/y');
+    $nombreIntroducido = "";
 
-        echo '<p>Hola ' . $nombreIntroducido . ' hoy es ' . $fechaActual . '</p>';
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $nombreIntroducido = test_input($_POST["nombre"]);
+        if (isset($_POST["nombre"])) {
+            $nombreIntroducido = test_input($_POST["nombre"]);
+            $nombreIntroducido = htmlspecialchars($_POST['nombre']);
+            $fechaActual = date('d/m/y');
+            echo '<p>Hola ' . $nombreIntroducido . ' hoy es ' . $fechaActual . '</p>';
+        }
+    }
+
+    function test_input($data)
+    {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
     }
     ?>
 </body>
