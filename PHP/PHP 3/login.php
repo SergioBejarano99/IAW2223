@@ -13,7 +13,7 @@
 <body>
     <h1>LOGIN</h1>
 
-    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
         <label for="usuario">Usuario:</label>
         <input type="text" name="usuario" placeholder="Introduce tu usuario"><br>
         <label for="contrasena">Contraseña:</label>
