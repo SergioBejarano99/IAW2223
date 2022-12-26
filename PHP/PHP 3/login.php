@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,39 +8,32 @@
     <title>Ejercicio 2</title>
 
     <meta autor="Sergio Bejarano Arroyo" />
-
-    <style>
-        label {
-            margin-right: 5px;
-        }
-
-        input[type="submit"] {
-            margin: 5px;
-        }
-    </style>
 </head>
+
 <body>
     <h1>LOGIN</h1>
 
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="get">
-        <label>Usuario:</label>
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+        <label for="usuario">Usuario:</label>
         <input type="text" name="usuario" placeholder="Introduce tu usuario"><br>
-        <label>Contraseña:</label>
+        <label for="contrasena">Contraseña:</label>
         <input type="password" name="contrasena" placeholder="Introduce tu contraseña"><br>
-        <input type="submit" value="Enviar">
+        <input type="submit" name="submit"><br>
     </form>
-
     <?php
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $usuarioIntroducido = htmlspecialchars($_REQUEST['usuario']);
-            $contrasenaIntroducida = htmlspecialchars($_REQUEST['contrasena']);
+    if (isset($_POST["submit"])) {
+        $usuarioIntroducido = htmlspecialchars($_POST["usuario"]);
+        $contrasenaIntroducida = htmlspecialchars($_POST["contrasena"]);
 
-            if (($usuarioIntroducido != "admin") && ($contrasenaIntroducida != "H4CK3R4$1R")) {
-                echo '<p>Acceso denegado</p>';
-            } else {
-                echo '<p>Acceso concedido</p>';
-            }
+        $usuarioObligatorio = "admin";
+        $contrasenaObligatoria = "H4CK3R4$1R";
+
+        if (!strcmp($usuarioIntroducido, $usuarioObligatorio) && !strcmp($contrasenaIntroducida, $contrasenaObligatoria)) {
+            echo "<p>Acceso concedido</p>";
+        } else {
+            echo "<p>Acceso denegado</p>";
         }
+    }
     ?>
 
     <h3>PREGUNTAS:</h3><!-- Preguntas propuestas en el Ejercicio. -->
@@ -50,8 +44,9 @@
         </li>
         <li>
             <h4>¿Cómo podemos "sanear" la Entrada de Datos para evitar Inyecciones de Código?:</h4>
-            <p>Haciendo uso de </p>
+            <p>Haciendo uso de la Función "htmlspecialchars()".</p>
         </li>
     </ul>
 </body>
+
 </html>
