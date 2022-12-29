@@ -1,0 +1,16 @@
+   El Fichero "php.ini" es un Archivo de Texto que es leído al arrancar PHP, el cual se utiliza para la Configuración de PHP. En él podemos establecer algunos Parámetros asociados al funcionamiento del Servidor cuando PHP funciona como Módulo de
+del Servidor.
+
+   El Fichero "php.ini" está dividido en tres Directivas distintas:
+	- Directivas de "php.ini"   =   Contiene un listado de las Directivas que se pueden establecer para la Configuración de PHP.
+	- Secciones de "php.ini"   =   Contiene un listado  de las Secciones que se pueden establecer para configurar los Ajustes de PHP según cada Servidor o Ruta.
+	- Directivas del Núcleo de "php.ini"   =   Contiene un listado de las Directivas del Núcleo que se pueden establecer para la Configuración de PHP.
+
+   Por otra parte, entre las Directivas de Configuración de PHP, se pueden establecer ciertos "límites" a la hora de recibir y tratar los Datos enviados por parte de un Formulario al Servidor. (Por ejemplo, Tamaños de los Archivos, Tipos y/o Extensiones
+de los Archivos, Cantidad de Archivos, Fecha y Hora en la que se puede recibir y enviar las Solicitudes al Servidor, Permisos, etc...).
+
+
+
+
+
+     © Sergio Bejarano Arroyo
