@@ -20,8 +20,8 @@
         <input type="text" name="apellido" placeholder="Escribe tus Apellidos."><br>
         <label for="email">Email:</label>
         <input type="email" name="email" placeholder="Escribe tu Email."><br>
-        <label for="bruto">Sueldo Bruto:</label>
-        <input type="number" name="bruto" min="0"><br>
+        <label for="bruto">Salario Bruto:</label>
+        <input type="number" name="bruto" min="1"><br>
         <input type="submit" value="Calcular"><br>
     </form>
 
@@ -30,7 +30,7 @@
         $bruto = htmlspecialchars($_POST["bruto"]);
 
         if ($bruto < 10000) {
-            echo '<p>La Cantidad que debe pagar, es de ' . $bruto * 0.5 . '€.</p>';
+            echo '<p>La Cantidad que debe pagar, es de ' . $bruto * 0.05 . '€.</p>';
         } elseif ($bruto < 20000) {
             echo '<p>La Cantidad que debe pagar, es de ' . $bruto * 0.15 . '€.</p>';
         } elseif ($bruto < 35000) {
