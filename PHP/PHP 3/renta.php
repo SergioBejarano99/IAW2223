@@ -11,6 +11,8 @@
 </head>
 
 <body>
+    <h1>RENTA:</h1>
+
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
         <label for="nombre">Nombre:</label>
         <input type="text" name="nombre" placeholder="Escribe tu Nombre."><br>
