@@ -13,32 +13,19 @@
 <body>
     <h1>SORTEO</h1>
 
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-        <label>Participantes:</label><br>
-        <textarea name="participantes" cols="30" rows="10" placeholder="Escribe los Participantes"></textarea><br>
-        <input type="submit" value="Sortear">
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+        <label for="participantes">Número:</label>
+        <input type="number" name="numero" min="1"><br>
+        <input type="submit" value="Sorteo">
     </form>
 
     <?php
-    $participantesIntroducidos = "";
-    $numerosAleatorios = rand(1, 50);
+    if ($_GET) {
+        $numero = htmlspecialchars($_GET["numero"]);
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $participantesIntroducidos = test_input($_POST["participantes"]);
-        if (isset($_POST["participantes"])) {
-            $participantesIntroducidos = test_input($_POST["participantes"]);
-            $participantesIntroducidos = htmlspecialchars($_POST['participantes']);
-
-            echo '<p>Enorabuena, ha sido premiado el Participante Número ' . $numerosAleatorios . '.</p>';
+        if ((is_numeric($numero)) && ($numero > 1) && (round($numero, 0) == $numero)) {
+            echo "<p>Premio para el número " . rand(1, $numero) . "</p>";
         }
-    }
-
-    function test_input($data)
-    {
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
     }
     ?>
 </body>
