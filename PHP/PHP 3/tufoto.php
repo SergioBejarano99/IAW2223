@@ -13,50 +13,32 @@
 <body>
     <h1>TU FOTO</h1>
 
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-        <label>Nombre:</label>
-        <input type="text" name="nombre" placeholder="Escribe tu Nombre."><br>
-        <label>Foto:</label>
-        <input type="file" name="archivo"><br>
-        <input type="submit" value="Enviar">
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
+        <label for="foto">Foto:</label><input type="file" name="imagen">
+        <input type="submit" name="submit" value="Subir foto">
     </form>
 
     <?php
-    $nombreIntroducido = "";
-    $fotoIntroducida = "";
+    if (isset($_POST["submit"])) {
+        $directorio = "uploads/"; //Este Directorio debe de crearse en nuestro Servidor manualmente.
 
+        $fichero = $directorio . basename($_FILES["imagen"]["name"]);
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $nombreIntroducido = test_input($_POST["nombre"]);
-        if (isset($_POST["nombre"])) {
-            $nombreIntroducido = test_input($_POST["nombre"]);
-            $nombreIntroducido = htmlspecialchars($_POST['nombre']);
-            echo '<h3>' . $nombreIntroducido . '</h3>';
+        $subidoOk = 1;
+
+        $tipoArchivo = strtolower(pathinfo($fichero, PATHINFO_EXTENSION));
+
+        $check = getimagesize($_FILES["imagen"]["tmp_name"]);
+
+        if ($check !== false) {
+            echo "Archivo es una imagen - " . $check["mime"] . ".";
+            $uploadOk = 1;
+            move_uploaded_file($_FILES["imagen"]["tmp_name"], $fichero);
+            echo "<img width='20%' src='$fichero'>";
+        } else {
+            echo "El archivo no es una imagen.";
+            $uploadOk = 0;
         }
-    }
-
-
-    if (isset($_POST['submit'])) {
-        $archivo = $_FILES['archivo']['name'];
-
-        if (isset($archivo) && $archivo != "") {
-            $temp = $_FILES['archivo']['tmp_name'];
-
-            if (move_uploaded_file($temp, 'images/' . $archivo)) {
-                echo '<p><img src="images/' . $archivo . '"></p>';
-            } else {
-                echo '<div><b>Ocurrió algún error al subir el fichero. No pudo guardarse.</b></div>';
-            }
-        }
-    }
-
-
-    function test_input($data)
-    {
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
     }
     ?>
 </body>
