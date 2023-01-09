@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <h1>RENTA:</h1>
+    <h1>RENTA</h1>
 
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
         <label for="nombre">Nombre:</label>
