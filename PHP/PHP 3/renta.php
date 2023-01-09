@@ -11,43 +11,36 @@
 </head>
 
 <body>
-    <h1>RENTA</h1>
-
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-        <label>Nombre:</label>
+        <label for="nombre">Nombre:</label>
         <input type="text" name="nombre" placeholder="Escribe tu Nombre."><br>
-        <label>Apellidos:</label>
-        <input type="text" name="apellidos" placeholder="Escribe tus Apellidos."><br>
-        <label>Email:</label>
+        <label for="apellido">Apellido:</label>
+        <input type="text" name="apellido" placeholder="Escribe tus Apellidos."><br>
+        <label for="email">Email:</label>
         <input type="email" name="email" placeholder="Escribe tu Email."><br>
-        <label>DNI:</label>
-        <input type="text" name="dni" placeholder="Escribe tu DNI."><br>
-        <label>Salario Bruto:</label>
-        <input type="number" name="salarioBruto" min=1><br>
-        <input type="submit" value="Calcular">
+        <label for="bruto">Sueldo Bruto:</label>
+        <input type="number" name="bruto" min="0"><br>
+        <input type="submit" value="Calcular"><br>
     </form>
 
     <?php
-    if (isset($POST["submit"])) {
-        $nombreIntroducido = htmlspecialchars($_POST["nombre"]);
-        $apellidosIntroducidos = htmlspecialchars($_POST["apellidos"]);
-        $emailIntroducido = htmlspecialchars($_POST["email"]);
-        $dniIntroducido = htmlspecialchars($_POST["dni"]);
-        $salarioBrutoIntroducido = htmlspecialchars($_POST["salarioBruto"]);
+    if ($_POST) {
+        $bruto = htmlspecialchars($_POST["bruto"]);
 
-        if ($salarioBrutoIntroducido < 10000) {
-            echo '<p>La Cantidad que debe pagar, es de ' . $salarioBrutoIntroducido * 5 / 100 . '€.</p>';
-        } elseif (($salarioBrutoIntroducido >= 10000) && ($salarioBrutoIntroducido < 20000)) {
-            echo '<p>La Cantidad que debe pagar, es de ' . $salarioBrutoIntroducido * 15 / 100 . '€.</p>';
-        } elseif (($salarioBrutoIntroducido >= 20000) && ($salarioBrutoIntroducido < 35000)) {
-            echo '<p>La Cantidad que debe pagar, es de ' . $salarioBrutoIntroducido * 20 / 100 . '€.</p>';
-        } elseif (($salarioBrutoIntroducido >= 35000) && ($salarioBrutoIntroducido <= 60000)) {
-            echo '<p>La Cantidad que debe pagar, es de ' . $salarioBrutoIntroducido * 30 / 100 . '€.</p>';
-        } elseif ($salarioBrutoIntroducido > 60000) {
-            echo '<p>La Cantidad que debe pagar, es de ' . $salarioBrutoIntroducido * 45 / 100 . '€.</p>';
+        if ($bruto < 10000) {
+            echo '<p>La Cantidad que debe pagar, es de ' . $bruto * 0.5 . '€.</p>';
+        } elseif ($bruto < 20000) {
+            echo '<p>La Cantidad que debe pagar, es de ' . $bruto * 0.15 . '€.</p>';
+        } elseif ($bruto < 35000) {
+            echo '<p>La Cantidad que debe pagar, es de ' . $bruto * 0.20 . '€.</p>';
+        } elseif ($bruto < 60000) {
+            echo '<p>La Cantidad que debe pagar, es de ' . $bruto * 0.30 . '€.</p>';
+        } else {
+            echo '<p>La Cantidad que debe pagar, es de ' . $bruto * 0.45 . '€.</p>';
         }
     }
     ?>
+
 </body>
 
 </html>
