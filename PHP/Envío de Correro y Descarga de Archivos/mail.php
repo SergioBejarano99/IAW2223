@@ -20,7 +20,7 @@
 
     <?php
     if (isset($_POST["submit"])) {
-        $destinatario = 'joseluisnunez@iesamachado.org';
+        $destinatario = 'correo@subdominio.dominio';
         $asunto = 'mail.php';
         $mensaje = 'Esto es una prueba de que funciona el Ejercicio de "email.php".';
 
