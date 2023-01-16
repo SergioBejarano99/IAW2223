@@ -17,4 +17,10 @@
             }
             mysqli_close($enlace);
         }
+
+
+
+
+
+    /* © Sergio Bejarano Arroyo */
 ?>

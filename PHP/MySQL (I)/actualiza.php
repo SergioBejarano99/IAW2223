@@ -9,8 +9,8 @@
         if (!$enlace) {
             echo "Error en la Conexión: " . mysqli_connect_error();
         } else {
-            $query = "ALTER TABLE usuarios ADD fullname TEXT, ADD email TEXT";
-            //$query = "ALTER TABLE usuarios ADD email TEXT";
+            $query = "UPDATE usuarios SET password='123456' WHERE id=7 LIMIT 1";
+            $query = "UPDATE usuarios SET password='123456' WHERE username='paloma' LIMIT 1";
             mysqli_query($enlace,$query);
             $query = "SELECT * FROM usuarios";
             $resultado = mysqli_query($enlace, $query);
