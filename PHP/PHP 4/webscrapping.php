@@ -19,22 +19,17 @@
 <body>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
         <label>URL:</label>
-        <input type="text" name="url" placeholder="Escribe la URL."><br>
-        <input type="submit" value="Eniar">
+        <input type="text" name="url" placeholder="Escribe la URL.">
+        <input type="submit" value="Obtener Emails">
     </form>
 
     <?php
-    $campoObligatorio = "";
-
-    $urlIntroducida = "";
-
     if (isset($_POST["submit"])) {
-        if (empty($_POST["url"])) {
-            $campoObligatorio = "Debes introducir una URL.";
-        } else {
-            $html = file_get_contents($urlIntroducida);
-            echo $html;
-        }
+        $urlIntroducida = $_POST["url"];
+        echo '<p>De la URL <strong>' . $urlIntroducida . '</strong> hemos recopilado las siguientes Direcciones de Correo Electrónico</p><br>';
+        $html = file_get_contents($urlIntroducida);
+        $emailsEncontrados = preg_match_all('/[\._a-zA-Z0-9-]+@[\._a-zA-Z0-9-]+/i', $html, $matches);
+        echo $emailsEncontrados;
     }
     ?>
 </body>
