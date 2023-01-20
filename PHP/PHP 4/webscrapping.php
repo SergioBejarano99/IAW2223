@@ -8,29 +8,34 @@
     <title>webscrapping.php</title>
 
     <meta autor="Sergio Bejarano Arroyo" />
-
-    <style>
-        input[name="url"] {
-            width: 500px;
-        }
-    </style>
 </head>
 
 <body>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
         <label>URL:</label>
-        <input type="text" name="url" placeholder="Escribe la URL.">
-        <input type="submit" value="Obtener Emails">
+        <input type="text" name="url" size="65" value="<?php echo $the_url;  ?>" placeholder="Escribe aquí la URL." />
+        <input type="submit" value="Obtener Emails" />
     </form>
 
     <?php
-    if (isset($_POST["submit"])) {
-        $urlIntroducida = $_POST["url"];
-        echo '<p>De la URL <strong>' . $urlIntroducida . '</strong> hemos recopilado las siguientes Direcciones de Correo Electrónico</p><br>';
-        $html = file_get_contents($urlIntroducida);
-        $emailsEncontrados = preg_match_all('/[\._a-zA-Z0-9-]+@[\._a-zA-Z0-9-]+/i', $html, $matches);
-        echo $emailsEncontrados;
+    $the_url = isset($_REQUEST['url']) ? htmlspecialchars($_REQUEST['url']) : '';
+
+    if (isset($_REQUEST['url']) && !empty($_REQUEST['url'])) {
+        $text = file_get_contents($_REQUEST['url']);
     }
+
+    if (!empty($text)) {
+        $res = preg_match_all("/[a-z0-9]+([_\\.-][a-z0-9]+)*@([a-z0-9]+([\.-][a-z0-9]+)*)+\\.[a-z]{2,}/i", $text, $matches);
+
+        if ($res) {
+            foreach (array_unique($matches[0]) as $email) {
+                echo $email . "<br />";
+            }
+        } else {
+            echo "No emails found.";
+        }
+    }
+
     ?>
 </body>
 
