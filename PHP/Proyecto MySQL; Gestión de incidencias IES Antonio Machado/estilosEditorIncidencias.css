@@ -1,0 +1,120 @@
+body {
+    background-color: rgb(223, 236, 255);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 75px;
+}
+
+h3 {
+    text-align: center;
+    margin: 0px;
+}
+
+.actualizaconErronea {
+    color: red;
+}
+
+.actualizacionCompletada {
+    color: green;
+}
+
+.formulario {
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    margin-top: 30px;
+}
+
+p {
+    margin: 0px;
+    font-family: sans-serif;
+    font-size: 20px;
+}
+
+input, textarea {
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 3px;
+    padding-left: 5px;
+    font-size: 14px;
+    font-style: oblique;
+    font-family: sans-serif;
+    border: 1px solid black;
+}
+
+input:hover, textarea:hover {
+    background-color: #dedccd;
+}
+
+form {
+    border: 0.5px solid;
+    padding: 30px;
+    background-color: #9fa1b7;
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+}
+
+input:hover[name="crear"] {
+    background-color: rgb(200, 240, 240);
+}
+
+a[href="controlIncidencias.php"] {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+a:link, a:visited, a:active {
+    text-decoration: none;
+}
+
+footer {
+    text-align: center;
+    color: #00000087;
+    font-style: oblique;
+    font-family: sans-serif;
+    margin: 20px;
+}
+
+.cajaPrincipal {
+    margin: auto;
+    width: fit-content;
+}
+
+.tablaIncidencias, td, tr {
+    border-collapse: collapse;
+    border: 2.5px #bdbdbd solid
+}
+
+.tablaIncidencias {
+    background-color: rgb(106, 160, 240);
+}
+
+tr:hover {
+    background-color: #a9c1bf;;
+}
+
+.tituloColumna {
+    background-color: black;
+    color: white;
+    font: oblique bold 15px cursive;
+    padding: 5px;
+}
+
+.datos {
+    font-family: monospace;
+    padding: 5px;
+}
+
+
+
+
+
+/* © Sergio Bejarano Arroyo */
