@@ -10,10 +10,10 @@
 </head>
 <body>
     <?php
-        $servername = ""; //Aquí iría el Nombre de tu Servidor.
-        $bd = ""; //Aquí iría el Nombre de tu Base de Datos.
-        $usuario = ""; //Aquí iría tu Usuario.
-        $password = ""; //Aquí iría tu Contraseña.
+        $servername = ""; //Aquí iría el Nombre del Servidor.
+        $bd = ""; //Aquí iría el Nombre de la Base de Datos.
+        $usuario = ""; //Aquí iría el Usuario.
+        $password = ""; //Aquí iría la Contraseña.
 
         $enlace = mysqli_connect($servername, $usuario, $password, $bd);
 
