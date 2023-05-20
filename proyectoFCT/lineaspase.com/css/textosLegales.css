@@ -1,0 +1,152 @@
+html {
+    min-height: 100%;
+    position: relative;
+}
+
+body {
+    margin: 0;
+    margin-bottom: 40px;
+    height: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos para la Cabecera de la Página Web: */
+header {
+    background-color: rgb(207, 255, 162);
+    margin-bottom: 50px;
+    height: 100%;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li {
+    display: inline-block;
+    height: 100%;
+}
+
+nav ul li a {
+    display: block;
+    color: black;
+    text-decoration: none;
+    padding: 25px 20px;
+    font-size: 12px;
+    font-weight: bolder;
+}
+
+nav ul li a:hover {
+    background-color: #4e913a;
+    text-decoration: none;
+    color: black;
+}
+
+nav ul li.inicio {
+    margin-right: auto;
+}
+
+.inicio a {
+    background-color: rgb(207, 255, 162);
+    margin-left: 10px;
+    padding: 0px;
+    font-size: 20px;
+    font-family: monospace;
+}
+
+.inicio a:hover {
+    background-color: rgb(207, 255, 162);
+}
+
+.inicio a::first-letter {
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.inicio span {
+    color: #51933e;
+    font-style: italic;
+}
+
+.paginaActiva {
+    background-color: white;
+}
+
+/* Estilos para el Pie de la Página Web: */
+footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    background-color: rgb(207, 255, 162);
+    text-align: center;
+    margin-top: 50px;
+}
+
+footer p {
+    margin: auto;
+    padding: 5px;
+    font-size: 15px;
+}
+
+/* Estilos para el Contenido Principal: */
+main {
+    min-height: 100vh;
+}
+
+/* Estilos para el Contenido Principal: */
+.contenidoPrincipal {
+    margin-left: 12%;
+    margin-right: 12%;
+}
+
+.contenidoPrincipal h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #51933e;
+    font-weight: bold;
+}
+
+.contenidoPrincipal h2 {
+    margin-top: 50px;
+    color: #51933e;
+}
+
+.contenidoPrincipal h3, .contenidoPrincipal h4 {
+    color: grey;
+    font-style: italic;
+    margin-top: 15px;
+    margin-bottom: 3px;
+}
+
+.contenidoPrincipal p {
+    font-size: 20px;
+    font-family: serif;
+    margin: 0px;
+    text-align: justify;
+}
+
+.contenidoPrincipal p::first-letter {
+    margin-left: 15px;
+}
+
+.contenidoPrincipal ul {
+    margin: 0px;
+}
+
+.contenidoPrincipal li {
+    font-size: 20px;
+    font-family: serif;
+    margin-left: 35px;
+    text-align: justify;
+}

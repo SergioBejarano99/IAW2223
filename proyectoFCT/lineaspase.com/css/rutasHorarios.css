@@ -1,0 +1,171 @@
+html {
+    min-height: 100%;
+    position: relative;
+}
+
+body {
+    margin: 0;
+    margin-bottom: 40px;
+    height: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Estilos para la Cabecera de la Página Web: */
+header {
+    background-color: rgb(207, 255, 162);
+    margin-bottom: 50px;
+    height: 100%;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li {
+    display: inline-block;
+    height: 100%;
+}
+
+nav ul li a {
+    display: block;
+    color: black;
+    text-decoration: none;
+    padding: 25px 20px;
+    font-size: 12px;
+    font-weight: bolder;
+}
+
+nav ul li a:hover {
+    background-color: #4e913a;
+    text-decoration: none;
+    color: black;
+}
+
+nav ul li.inicio {
+    margin-right: auto;
+}
+
+.inicio a {
+    background-color: rgb(207, 255, 162);
+    margin-left: 10px;
+    padding: 0px;
+    font-size: 20px;
+    font-family: monospace;
+}
+
+.inicio a:hover {
+    background-color: rgb(207, 255, 162);
+}
+
+.inicio a::first-letter {
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.inicio span {
+    color: #51933e;
+    font-style: italic;
+}
+
+.paginaActiva {
+    background-color: white;
+}
+
+/* Estilos para el Pie de la Página Web: */
+footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    background-color: rgb(207, 255, 162);
+    text-align: center;
+}
+
+footer p {
+    margin: auto;
+    padding: 5px;
+    font-size: 15px;
+}
+
+
+/* Estilos para el Contenido Principal: */
+main {
+    min-height: 100vh;
+}
+
+
+/* Estilos para el Contenido Principal: */
+.contenidoPrincipal {
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+.contenidoPrincipal h1 {
+    text-align: center;
+    margin-bottom: 50px;
+    color: #51933e;
+    font-weight: bold;
+}
+
+
+/* Estilos para los desplegables: */
+.caja {
+    border: 1px solid #51933e;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.titulo {
+    background-color: rgb(230, 255, 207);
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #51933e;
+    font-size: 20px;
+    font-family: inherit;
+}
+
+.contenido {
+    display: none;
+    transition: max-height 0.3s ease;
+}
+
+
+/* Estilos para las Tablas de las Horas: */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 8px;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: #e1f8d8;
+}
+
+.botonesComprar:hover,
+.botonesComprar {
+    font-weight: bolder;
+    text-decoration: none;
+    color: black;
+}
+
+.botonesComprar p {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
