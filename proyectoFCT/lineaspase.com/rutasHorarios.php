@@ -29,7 +29,7 @@
                     <a href="https://192.168.1.211/rutasHorarios.php" class="paginaActiva">RUTAS Y HORARIOS</a>
                 </li>
                 <li>
-                    <a href="https://192.168.1.211/contacto.html">CONTACTO</a>
+                    <a href="https://192.168.1.211/contacto.php">CONTACTO</a>
                 </li>
                 <li>
                     <a href="https://192.168.1.211/textosLegales.html">TEXTOS LEGALES</a>
@@ -102,7 +102,7 @@
                                     </div>
                               </div>";
                     } else {
-                        echo "<p>Lo sentimos, se ha producio un error al cargar la Información. Por favor, vuelva a intentarlo más tarde o póngase en contacto através de <a href='https://192.168.1.211/contacto.html'>este enlace</a>. Gracias, y disculpe las molestias.<p>";
+                        echo "<p>Lo sentimos, se ha producio un error al cargar la Información. Por favor, vuelva a intentarlo más tarde o póngase en contacto através de <a href='https://192.168.1.211/contacto.php'>este enlace</a>. Gracias, y disculpe las molestias.<p>";
                     }
                 ?>
 
@@ -162,7 +162,7 @@
                                     </div>
                               </div>";
                     } else {
-                        echo "<p>Lo sentimos, se ha producio un error al cargar la Información. Por favor, vuelva a intentarlo más tarde o póngase en contacto através de <a href='https://192.168.1.211/contacto.html'>este enlace</a>. Gracias, y disculpe las molestias.<p>";
+                        echo "<p>Lo sentimos, se ha producio un error al cargar la Información. Por favor, vuelva a intentarlo más tarde o póngase en contacto através de <a href='https://192.168.1.211/contacto.php'>este enlace</a>. Gracias, y disculpe las molestias.<p>";
                     }
                 ?>
 
@@ -222,7 +222,7 @@
                                     </div>
                               </div>";
                     } else {
-                        echo "<p>Lo sentimos, se ha producio un error al cargar la Información. Por favor, vuelva a intentarlo más tarde o póngase en contacto através de <a href='https://192.168.1.211/contacto.html'>este enlace</a>. Gracias, y disculpe las molestias.<p>";
+                        echo "<p>Lo sentimos, se ha producio un error al cargar la Información. Por favor, vuelva a intentarlo más tarde o póngase en contacto através de <a href='https://192.168.1.211/contacto.php'>este enlace</a>. Gracias, y disculpe las molestias.<p>";
                     }
                 ?>
 
@@ -282,7 +282,7 @@
                                     </div>
                               </div>";
                     } else {
-                        echo "<p>Lo sentimos, se ha producio un error al cargar la Información. Por favor, vuelva a intentarlo más tarde o póngase en contacto através de <a href='https://192.168.1.211/contacto.html'>este enlace</a>. Gracias, y disculpe las molestias.<p>";
+                        echo "<p>Lo sentimos, se ha producio un error al cargar la Información. Por favor, vuelva a intentarlo más tarde o póngase en contacto através de <a href='https://192.168.1.211/contacto.php'>este enlace</a>. Gracias, y disculpe las molestias.<p>";
                     }
                 ?>
 
@@ -342,7 +342,7 @@
                                     </div>
                               </div>";
                     } else {
-                        echo "<p>Lo sentimos, se ha producio un error al cargar la Información. Por favor, vuelva a intentarlo más tarde o póngase en contacto através de <a href='https://192.168.1.211/contacto.html'>este enlace</a>. Gracias, y disculpe las molestias.<p>";
+                        echo "<p>Lo sentimos, se ha producio un error al cargar la Información. Por favor, vuelva a intentarlo más tarde o póngase en contacto através de <a href='https://192.168.1.211/contacto.php'>este enlace</a>. Gracias, y disculpe las molestias.<p>";
                     }
                 ?>
 
@@ -402,7 +402,7 @@
                                     </div>
                               </div>";
                     } else {
-                        echo "<p>Lo sentimos, se ha producio un error al cargar la Información. Por favor, vuelva a intentarlo más tarde o póngase en contacto através de <a href='https://192.168.1.211/contacto.html'>este enlace</a>. Gracias, y disculpe las molestias.<p>";
+                        echo "<p>Lo sentimos, se ha producio un error al cargar la Información. Por favor, vuelva a intentarlo más tarde o póngase en contacto através de <a href='https://192.168.1.211/contacto.php'>este enlace</a>. Gracias, y disculpe las molestias.<p>";
                     }
                 ?>
             </div>

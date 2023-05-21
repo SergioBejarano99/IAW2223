@@ -25,7 +25,7 @@
                     <a href="https://192.168.1.211/rutasHorarios.php">RUTAS Y HORARIOS</a>
                 </li>
                 <li>
-                    <a href="https://192.168.1.211/contacto.html">CONTACTO</a>
+                    <a href="https://192.168.1.211/contacto.php">CONTACTO</a>
                 </li>
                 <li>
                     <a href="https://192.168.1.211/textosLegales.html">TEXTOS LEGALES</a>

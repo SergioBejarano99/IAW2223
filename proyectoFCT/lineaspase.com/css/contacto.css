@@ -107,3 +107,8 @@ footer p {
 main {
     min-height: 100vh;
 }
+
+/* Estilos para el Formulario: */
+.enviado {
+    color: green;
+}

@@ -78,11 +78,6 @@ nav ul li.inicio {
     font-style: italic;
 }
 
-/*.inicio img {
-    height: 40px;
-    width: 120px;
-}*/
-
 /* Estilos para el Pie de la Página Web: */
 footer {
     left: 0;
@@ -133,24 +128,8 @@ main {
     min-height: 100vh;
 }
 
-/* Descripción: */
-.descripcion {
-    margin: 30px;
-    margin-left: 12%;
-    margin-right: 12%;
-    margin-bottom: 30px;
-    margin-top: 50px;
-}
 
-.descripcion h1 {
+/* Estilos para el Contenido Principal: */
+.contenidoPincipal {
     text-align: center;
-    font-style: italic;
-    color: #51933e;
-    font-size: 45px;
-}
-
-.descripcion p {
-    text-indent: 25px;
-    font-family: cursive;
-    text-align: justify;
 }
